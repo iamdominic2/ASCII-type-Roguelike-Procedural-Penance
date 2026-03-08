@@ -1,3 +1,5 @@
+//THIS is where all the junk and variables and lists are at. Most of it is just data that will get replaced again and again, don't worry too much.
+
 //----- Variables -----------------------------------------------------------------------------------------------------
 
 att = 0
@@ -16407,7 +16409,7 @@ weapon/shield power = {
 
 //----- Green flag events ---------------------------------------------------------------------------------------------
 
-WhenGreenFlagClicked()
+WhenGreenFlagClicked() //This handles resetting status and leveling up
 {
     PlayerLevel = 1;
     floor = 1;
@@ -16451,7 +16453,7 @@ WhenGreenFlagClicked()
     }
 }
 
-WhenGreenFlagClicked()
+WhenGreenFlagClicked() //This handles the music playing
 {
     List.DeleteAll(textlog);
     List.DeleteAll(inventorycount);
@@ -16470,7 +16472,7 @@ WhenGreenFlagClicked()
     }
 }
 
-WhenGreenFlagClicked()
+WhenGreenFlagClicked() //Music for Monster House
 {
     Forever
     {
@@ -16484,7 +16486,7 @@ WhenGreenFlagClicked()
     }
 }
 
-WhenGreenFlagClicked()
+WhenGreenFlagClicked() //Opening or closing item menu
 {
     Forever
     {
@@ -16503,7 +16505,7 @@ WhenGreenFlagClicked()
 
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
-WhenBroadcastReceived(Ending)
+WhenBroadcastReceived(Ending) //The End
 {
     Stop(other scripts in sprite);
     Forever
@@ -16512,7 +16514,7 @@ WhenBroadcastReceived(Ending)
     }
 }
 
-WhenBroadcastReceived(StartGame)
+WhenBroadcastReceived(StartGame) //Start the music
 {
     Forever
     {
@@ -16534,7 +16536,7 @@ WhenBroadcastReceived(StartGame)
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
 
-Define LvUP (warp=true)
+Define LvUP (warp=true) //Calculate HP gain and HP
 {
     Repeat Until ((Not ((PlayerExp > (exp table[PlayerLevel] - 1)))) Or (PlayerLevel > 98))
     {
