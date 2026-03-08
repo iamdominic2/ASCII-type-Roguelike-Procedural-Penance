@@ -4,6 +4,9 @@
 Playable link:
 https://iamdominic2.itch.io/ascii-type-roguelike-procedural-penance
 
+HTML file link:
+https://drive.google.com/file/d/1hW3pL0tiuJLlH_YTC9yDrqcIzqReaChd/view?usp=sharing
+
 In the code, a lot of things occurs in Map&PC, Text, and Enemies.
 
 1. Tile-based movement and turn-based combat.
