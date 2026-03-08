@@ -1,3 +1,5 @@
+//Outputs the text other than the HUD (Message log and inventory)
+
 //----- Green flag events ---------------------------------------------------------------------------------------------
 
 WhenGreenFlagClicked()
@@ -15,23 +17,23 @@ WhenGreenFlagClicked()
             {
                 If (selectioninv == 0)
                 {
-                    selectioninv = 1;
-                    selectioninv2 = 1;
+                    selectioninv = 1; //The item hovered
+                    selectioninv2 = 1; //The action hovered: "Use"/Place/Info
                     Wait Until (Not (Sensing.KeyPressed(z)));
                 }
                 Else
                 {
-                    If (selectioninv2 == 3)
+                    If (selectioninv2 == 3) //Item Description
                     {
                         List.Add(textlog, items[inventory[ihover]]);
                         List.Add(textlog, ItemDesc[inventory[ihover]]);
                         Wait Until (Not (Sensing.KeyPressed(z)));
                     }
-                    If (selectioninv2 == 2)
+                    If (selectioninv2 == 2) //Can be either dropping or swapping
                     {
-                        If (mapitems[Playerloc] == "")
+                        If (mapitems[Playerloc] == "") //There is no item underfoot
                         {
-                            List.Add(textlog, Operator.Join(Operator.Join("Dropped ", Operator.Join(items[inventory[ihover]], inventorycount[ihover])), "."));
+                            List.Add(textlog, Operator.Join(Operator.Join("Dropped ", Operator.Join(items[inventory[ihover]], inventorycount[ihover])), ".")); //Drops item
                             List.ReplaceItem(mapitems, Playerloc, inventory[ihover]);
                             List.ReplaceItem(flooritemmount, Playerloc, Operator.Round(inventorycount[ihover]));
                             List.DeleteItem(inventory, ihover);
@@ -45,7 +47,7 @@ WhenGreenFlagClicked()
                             selectioninv2 = 1;
                             inventoryopen = 0;
                         }
-                        Else
+                        Else //Swaps the item
                         {
                             Sound.Play(Collect);
                             List.Add(inventory, mapitems[Playerloc]);
@@ -83,7 +85,7 @@ WhenGreenFlagClicked()
                     }
                     Else
                     {
-                        If (selectioninv2 == 1)
+                        If (selectioninv2 == 1) // "Use": A lot of items are there.
                         {
                             If (equipped[ihover] > 0)
                             {
@@ -501,7 +503,7 @@ WhenBroadcastReceived(clearclones)
     Control.DeleteThisClone();
 }
 
-WhenBroadcastReceived(Paint Bottom)
+WhenBroadcastReceived(Paint Bottom) //Prints the items No 1-20.
 {
     Looks.SetEffectTo(BRIGHTNESS, 100);
     Call I item(1) at(-235)(170);
@@ -627,7 +629,7 @@ WhenBroadcastReceived(Paint Bottom)
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
 
-Define Explosion (warp=true)
+Define Explosion (warp=true) //Erases adjacent entitites
 {
     Sound.Play(Explosion);
     Repeat (9)
@@ -652,7 +654,7 @@ Define Explosion (warp=true)
     }
 }
 
-Define Fire Projectile (warp=true)
+Define Fire Projectile (warp=true) //Technically, it's not arrows, but magic staff and flame herb.
 {
     If (inventory[ihover] == 29)
     {
@@ -669,7 +671,7 @@ Define Fire Projectile (warp=true)
     Call Projectile Effect;
 }
 
-Define I item(string ?) at(string x)(string y) (warp=false)
+Define I item(string ?) at(string x)(string y) (warp=false) //Print inventory
 {
     If ((ihover == ?) And (inventoryopen == 1))
     {
@@ -695,7 +697,7 @@ Define I item(string ?) at(string x)(string y) (warp=false)
     }
 }
 
-Define Lightning (warp=true)
+Define Lightning (warp=true) //Lightning on enemies in view
 {
     Repeat (49)
     {
@@ -718,7 +720,7 @@ Define Lightning (warp=true)
     }
 }
 
-Define Paralyze nearby (warp=true)
+Define Paralyze nearby (warp=true) //Crisis scroll effect
 {
     counter1 = 0;
     Repeat (9)
@@ -732,7 +734,7 @@ Define Paralyze nearby (warp=true)
     }
 }
 
-Define Projectile Effect (warp=true)
+Define Projectile Effect (warp=true) //This actaully does the projectile stuff if it detects an enemy,
 {
     If (inventory[ihover] == 29)
     {
@@ -823,7 +825,7 @@ Define Projectile Effect (warp=true)
     }
     If (inventory[ihover] == 38)
     {
-        If (monsterhp[projectiletile] > 99)
+        If (monsterhp[projectiletile] > 99) //Slowing bosses is cheating.
         {
             List.Add(textlog, "But it was nullified!");
         }
@@ -855,7 +857,7 @@ Define Reveal(string number or text) (warp=true)
     }
 }
 
-Define RevealMap (warp=true)
+Define RevealMap (warp=true) //Again, reveals the map.
 {
     revealloc = 0;
     Repeat (2360)
@@ -916,7 +918,7 @@ Define RevealMap (warp=true)
     }
 }
 
-Define Scatter(string status) text(string text) (warp=true)
+Define Scatter(string status) text(string text) (warp=true) //For sleep/confusion scrolls
 {
     counter1 = 0;
     Repeat (2360)
@@ -930,7 +932,7 @@ Define Scatter(string status) text(string text) (warp=true)
     }
 }
 
-Define Warp (warp=true)
+Define Warp (warp=true) //Teleporter to empty tile
 {
     Sound.Play(Teleport2);
     counter1 = 0;
@@ -940,7 +942,7 @@ Define Warp (warp=true)
     }
 }
 
-Define Write(string number or text) at(string x)(string y) (warp=true)
+Define Write(string number or text) at(string x)(string y) (warp=true) /Writer block
 {
     Looks.SwitchCostumeTo(abc);
     Looks.SetSizeTo(48);
