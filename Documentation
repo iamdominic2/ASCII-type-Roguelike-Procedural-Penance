@@ -1,37 +1,41 @@
 [MonsterStats], [MonsterTable], [Items], [ExpTable], [DMGformula] (Ctrl+F)
 
 [MonsterStats]
-| Ant          | HP | Atk | Def | Ex   | Element (Flying/Ghost) |
-|--------------|----|-----|-----|------|------------------------|
-| Bee          | 3  | 2   | 6   | 3    |                        |
-| Cursister    | 22 | 3   | 43  | 30   | F                      |
-| Dragon       | 30 | 5   | 48  | 180  | G                      |
-| Eyeball      | 45 | 12  | 99  | 2000 | F                      |
-| Firepuff     | 26 | 13  | 55  | 210  | F                      |
-| God          | 27 | 7   | 37  | 20   | F                      |
-| Hen          | 48 | 14  | 466 | 9999 |                        |
-| Immunacrab   | 2  | 1   | 7   | 4    |                        |
-| Jolteodon    | 32 | 6   | 50  | 115  |                        |
-| Killer       | 37 | 11  | 70  | 840  |                        |
-| Leecher      | 47 | 10  | 85  | 1440 |                        |
-| Mage         | 26 | 14  | 50  | 55   |                        |
-| Nuancer      | 24 | 10  | 65  | 440  | F, G                   |
-| Onigirighost | 15 | 4   | 43  | 25   |                        |
-| Punisher     | 5  | 4   | 24  | 7    |                        |
-| Queen        | 29 | 8   | 55  | 400  |                        |
-| Reaper       | 35 | 10  | 216 | 4800 |                        |
-| Snake        | 17 | 6   | 42  | 130  | F, G                   |
-| Tiger        | 9  | 4   | 34  | 15   |                        |
-| UFO          | 31 | 8   | 47  | 270  |                        |
-| Vampire      | 32 | 99  | 6   | 888  | F                      |
-| Will-O-Wisp  | 15 | 5   | 29  | 18   | G                      |
-| Xplodetank   | 24 | 4   | 46  | 54   | 5, FG                  |
-| Yawner       | 35 | 14  | 53  | 650  |                        |
-| Zombie       | 17 | 7   | 58  | 70   |                        |
-|--------------|----|-----|-----|------|------------------------|
+
+| NAME         | ATk | DEF | HP  | EXP  | ELEMENT | SPECIAL                                                                                                       | Usage rate |
+|--------------|-----|-----|-----|------|---------|---------------------------------------------------------------------------------------------------------------|------------|
+| Ant          | 3   | 2   | 6   | 3    | -       | Weakling                                                                                                      | 0          |
+| Bee          | 22  | 3   | 43  | 30   | F       | x1.7 to x2 damage confusion sting + death                                                                     | 1/5        |
+| Cursister    | 30  | 5   | 48  | 180  | G       | Curse non-equpped item                                                                                        | 1/5        |
+| Dragon       | 45  | 12  | 99  | 2000 | F       | 20 damage fire (Floor wide)                                                                                   | 1/15       |
+| Eyeball      | 26  | 13  | 55  | 210  | F       | Sight: Confusion glare                                                                                        | 1/5        |
+| Firepuff     | 27  | 7   | 37  | 20   | F       | 10 damage adjacent fire                                                                                       | 0          |
+| God          | 48  | 14  | 466 | 9999 | -       | 40 damage lightning, 10-15damage earthquake+Unequip, 18-23dmg Conf Beam, 2 dragon summon                      | 1/3        |
+| Hen          | 2   | 1   | 7   | 4    | -       | 2 actions per turn                                                                                            | 0          |
+| Immunacrab   | 32  | 6   | 50  | 115  | -       | Recover from status in 1 turn                                                                                 | 0          |
+| Jolteodon    | 37  | 11  | 70  | 840  | -       | 1 action every 2 turns, Sight: 25 damage lightning                                                            | 1/6        |
+| Killer       | 47  | 10  | 85  | 1440 | -       | High attack power                                                                                             | 0          |
+| Leecher      | 26  | 14  | 50  | 55   | -       | Drain 1 Power                                                                                                 | 1/5        |
+| Mage         | 24  | 10  | 65  | 440  | FG      | Sight line: Confusion/Sleep staff                                                                             | 1/4        |
+| Nuancer      | 15  | 4   | 43  | 25   | -       | Morph 1 item into random (can fail, if there is a + it's always 1)                                            | 1/5        |
+| Onigirighost | 5   | 4   | 24  | 7    | -       | Drain 20 fullness                                                                                             | 1/5        |
+| Punisher     | 29  | 8   | 55  | 400  | -       | Land a double damage critical hit                                                                             | 0          |
+| Queen        | 35  | 10  | 216 | 4800 | -       | Poison claw x0.7tox0.8 normal attack, lose 2 Power; Rock throw x0.5  to x0.6power, Summon Punisher&Immunecrab | 1/3        |
+| Reaper       | 17  | 6   | 42  | 130  | FG      | 2 actions per turn                                                                                            | 0          |
+| Snake        | 9   | 4   | 34  | 15   | -       | Paralyze you 2 turns                                                                                          | 1/5        |
+| Tiger        | 31  | 8   | 47  | 270  | -       | Throw you to random location + 25 damage                                                                      | 1/5        |
+| UFO          | 32  | 99  | 6   | 888  | F       | High defense power                                                                                            | 0          |
+| Vampire      | 15  | 5   | 29  | 18   | G       | Drain 4 Max HP                                                                                                | 1/5        |
+| Will-O-Wisp  | 24  | 4   | 46  | 54   | FG      | Level -1                                                                                                      | 1/5        |
+| Xplodetank   | 35  | 14  | 53  | 650  | -       | 40 damage cannonball                                                                                          | 1/4        |
+| Yawner       | 17  | 7   | 58  | 70   | -       | Sleep                                                                                                         | 1/5        |
+| Zombie       | 11  | 2   | 23  | 8    | G       | Rot riceballs randomly                                                                                        | 1/5        |
+
+
 
 [MonsterTable]
-|Fl# |Monsters|
+
+|FL# |INITIALS|
 |----|--------|
 | 1  | AHA    |
 | 2  | AHH    |
