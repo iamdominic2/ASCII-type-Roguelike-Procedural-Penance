@@ -10,7 +10,7 @@ WhenGreenFlagClicked()
 
 //----- Key pressed events --------------------------------------------------------------------------------------------
 
-WhenKeyPressed(up arrow)
+WhenKeyPressed(up arrow) //This two are the SCROLL WHEEL and not actually the keys due to some engine funny stuff.
 {
     If (Not (Sensing.KeyPressed(up arrow)))
     {
