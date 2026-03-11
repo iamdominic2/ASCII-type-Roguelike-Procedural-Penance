@@ -5,7 +5,7 @@
 | NAME         | ATk | DEF | HP  | EXP  | ELEMENT | SPECIAL                                                                                                       | Usage rate |
 |--------------|-----|-----|-----|------|---------|---------------------------------------------------------------------------------------------------------------|------------|
 | Ant          | 3   | 2   | 6   | 3    | -       | Weakling                                                                                                      | 0          |
-| Bee          | 22  | 3   | 43  | 30   | F       | x1.7 to x2 damage confusion sting + death                                                                     | 1/5        |
+| Bee          | 22  | 3   | 43  | 30   | F       | x1.7 to x2 damage confusion sting + dies in process                                                                    | 1/5        |
 | Cursister    | 30  | 5   | 48  | 180  | G       | Curse non-equpped item                                                                                        | 1/5        |
 | Dragon       | 45  | 12  | 99  | 2000 | F       | 20 damage fire (Floor wide)                                                                                   | 1/15       |
 | Eyeball      | 26  | 13  | 55  | 210  | F       | Sight: Confusion glare                                                                                        | 1/5        |
