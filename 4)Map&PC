@@ -892,7 +892,7 @@ Define PaintMap (warp=true) //Paints the map based on the things in the Map List
     Looks.Hide();
 }
 
-Define PastTurn (warp=false) //Pass turns with X+Z
+Define PastTurn (warp=false) //Pass turns with X+Z, but technically also applies when doing other actions due to HP recovery.
 {
     turn += 1;
     Event.Broadcast("EnemyMovement");
